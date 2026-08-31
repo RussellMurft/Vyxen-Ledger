@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VYXEN LEDGER | Asesoría Contable y Financiera Avanzada</title>
+  <meta name="description" content="Asesoría contable premium, control de inventarios y formalización para MIPYMES y emprendedores.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- CANVAS DE PARTÍCULAS -->
+<canvas id="particles-canvas"></canvas>
+
+<!-- BARRA SUPERIOR DE ANUNCIOS -->
+<div class="top-bar">
+  <div class="container top-bar-flex">
+    <p>🚀 ¡Cupos abiertos para el nuevo ciclo de Mentorías Contables</p>
+    <a href="#contacto">Reserva tu espacio →</a>
+  </div>
+</div>
+
+<header class="header" id="mainHeader">
+  <div class="container nav">
+    <a class="logo" href="#inicio">
+      <img src="VyxenLedger.jpeg" alt="VYXEN LEDGER">
+      <div class="logo-text">
+        <span>VYXEN LEDGER</span>
+        <span>Despacho Contable</span>
+      </div>
+    </a>
+    <button class="menu-btn" aria-label="Abrir menú" id="menuBtn">☰</button>
+    <nav id="navMenu">
+      <a href="#inicio">Inicio</a>
+      <a href="#problema">El Desafío</a>
+      <a href="#metodo">Método</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#recursos">Recursos</a>
+      <a href="#sucursales">Oficinas</a>
+      <a href="#opiniones">Reseñas</a>
+      <a href="#faq">FAQ</a>
+      <a href="#nosotros">Nosotros</a>
+      <a class="nav-cta" href="#contacto">Contactar</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ==================== HERO ==================== -->
+  <section id="inicio" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">ASESORÍA CONTABLE Y FINANCIERA</p>
+        <h1>Transformamos tu<br><em>Contabilidad</em> en Éxito</h1>
+        <p class="lead">Precisión. Confianza. Estrategia corporativa.</p>
+        <p class="sublead">Desmitificamos la contabilidad tradicional y la convertimos en herramientas prácticas para emprendedores y MIPYMES. Tu éxito financiero comienza aquí.</p>
+        <div class="actions">
+          <a class="btn primary" href="#contacto" onclick="toggleAppointmentModal(true)">Agendar Asesoría <span>↗</span></a>
+          <a class="btn ghost" href="#servicios">Ver Servicios</a>
+        </div>
+      </div>
+      <div class="hero-card reveal">
+        <div class="card-glow"></div>
+        <div class="ledger-box">
+          <span class="mini-label">VYXEN / FINANCE DASHBOARD</span>
+          <strong>Claridad financiera.</strong>
+          <div class="chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="ledger-row"><span>Ingresos Netos</span><b>+ 24.8%</b></div>
+          <div class="ledger-row"><span>Estado Fiscal</span><b>Optimizado</b></div>
+          <div class="ledger-row"><span>Rentabilidad</span><b>▲ Escalada</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ==================== EL PROBLEMA ==================== -->
+  <section id="problema" class="section problem">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">EL DESAFÍO</p>
+        <h2>¿Te resulta familiar esta situación?</h2>
+        <p>Muchos negocios enfrentan obstáculos críticos que frenan sus ganancias a fin de mes.</p>
+      </div>
+      <div class="three-grid stagger-children">
+        <article class="problem-card reveal">
+          <div class="number">01</div>
+          <h3>Desorden Financiero</h3>
+          <p>Tus finanzas son un caos, no sabes con certeza cuánto ganas realmente ni cuáles son tus deudas.</p>
+        </article>
+        <article class="problem-card reveal">
+          <div class="number">02</div>
+          <h3>Márgenes Bajos</h3>
+          <p>Vendes constantemente pero el dinero no se refleja. Tus precios no cubren los costos operativos reales.</p>
+        </article>
+        <article class="problem-card reveal">
+          <div class="number">03</div>
+          <h3>Ansiedad ante Impuestos</h3>
+          <p>Las obligaciones tributarias generan estrés constante por temor a multas, recargos o errores de cálculo.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ==================== MÉTODO ==================== -->
+  <section id="metodo" class="section method">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">NUESTRO PROCESO</p>
+        <h2>Cómo Transformamos tu Negocio</h2>
+        <p>Una metodología rigurosa y probada en 4 fases para escalar tu estructura financiera.</p>
+      </div>
+      <div class="steps stagger-children">
+        <article class="step reveal">
+          <span>01</span>
+          <h3>Diagnóstico</h3>
+          <p>Auditoría rápida de tu situación actual para detectar fugas de capital.</p>
+        </article>
+        <article class="step reveal">
+          <span>02</span>
+          <h3>Estrategia</h3>
+          <p>Diseño de un plan a la medida para corregir precios y optimizar tributos.</p>
+        </article>
+        <article class="step reveal">
+          <span>03</span>
+          <h3>Implementación</h3>
+          <p>Instalación de plantillas, herramientas y software de control diario.</p>
+        </article>
+        <article class="step reveal">
+          <span>04</span>
+          <h3>Escalamiento</h3>
+          <p>Monitoreo continuo de indicadores clave para garantizar rentabilidad.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ==================== SERVICIOS ==================== -->
+  <section id="servicios" class="section services">
+    <div class="container">
+      <div class="section-head left reveal">
+        <p class="eyebrow">NUESTROS SERVICIOS</p>
+        <h2>Soluciones Integrales para tu Empresa</h2>
+        <p>Acompañamiento especializado adaptado a las necesidades de tu modelo de negocio.</p>
+      </div>
+      <div class="services-grid stagger-children">
+        <article class="service-card reveal">
+          <div>
+            <h3>Mentoría Contable</h3>
+            <p>Sesiones privadas para resolver nudos críticos y trazar tu ruta financiera.</p>
+          </div>
+          <a class="service-link" href="#contacto">Saber más →</a>
+        </article>
+        <article class="service-card reveal">
+          <div>
+            <h3>Talleres Prácticos</h3>
+            <p>Capacitaciones enfocadas en gestión de flujos de caja para equipos y emprendedores.</p>
+          </div>
+          <a class="service-link" href="#contacto">Saber más →</a>
+        </article>
+        <article class="service-card reveal">
+          <div>
+            <h3>Formalización Legal y Fiscal</h3>
+            <p>Guía paso a paso para constituir tu empresa y cumplir en regla con el fisco.</p>
+          </div>
+          <a class="service-link" href="#contacto">Saber más →</a>
+        </article>
+        <article class="service-card reveal">
+          <div>
+            <h3>Control de Inventarios</h3>
+            <p>Metodologías eficientes para reducir mermas y optimizar la rotación de mercancía.</p>
+          </div>
+          <a class="service-link" href="#contacto">Saber más →</a>
+        </article>
+        <article class="service-card reveal">
+          <div>
+            <h3>Cálculo de Costos Reales</h3>
+            <p>Identifica cada centavo invertido en la producción de tus bienes o servicios.</p>
+          </div>
+          <a class="service-link" href="#contacto">Saber más →</a>
+        </article>
+        <article class="service-card reveal">
+          <div>
+            <h3>Fijación de Precios</h3>
+            <p>Asegura márgenes de utilidad saludables que impulsen el crecimiento sostenido.</p>
+          </div>
+          <a class="service-link" href="#contacto">Saber más →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ==================== RECURSOS ==================== -->
+  <section id="recursos" class="section resources-section">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">RECURSOS GRATUITOS</p>
+        <h2>Herramientas de Acceso Inmediato</h2>
+        <p>Descarga plantillas profesionales y comienza a ordenar tus números hoy mismo.</p>
+      </div>
+
+      <div class="reveal" style="max-width: 480px; margin: 0 auto 36px auto;">
+        <input type="text" id="resource-search" class="form-input" placeholder="🔍 Buscar plantillas, guías o formatos..." oninput="filterResources()">
+      </div>
+
+      <div class="three-grid resource-grid stagger-children">
+        <article class="resource-card reveal" id="resource-card-1">
+          <span class="price-tag">GRATIS <span class="old-price">$299</span></span>
+          <h3>Calculadora de Precios</h3>
+          <p>Plantilla optimizada para calcular precios de venta con base en costos fijos.</p>
+          <button class="btn outline full" onclick="downloadNotice()">Descargar Archivo →</button>
+        </article>
+        <article class="resource-card reveal" id="resource-card-2">
+          <span class="price-tag">GRATIS <span class="old-price">$199</span></span>
+          <h3>Guía de Formalización</h3>
+          <p>Documento PDF con los pasos legales indispensables para registrar tu negocio.</p>
+          <button class="btn outline full" onclick="downloadNotice()">Descargar Archivo →</button>
+        </article>
+        <article class="resource-card reveal" id="resource-card-3">
+          <span class="price-tag">GRATIS <span class="old-price">$249</span></span>
+          <h3>Plantilla de Flujo de Caja</h3>
+          <p>Control mensual automatizado de entradas y salidas de dinero.</p>
+          <button class="btn outline full" onclick="downloadNotice()">Descargar Archivo →</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ==================== SUCURSALES ==================== -->
+  <section id="sucursales" class="section sucursales-section">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">PRESENCIA FÍSICA</p>
+        <h2>Nuestras Oficinas</h2>
+        <p>Visítanos o comunícate directamente con nuestras sedes autorizadas.</p>
+      </div>
+      <div class="branches-grid reveal">
+        <div class="branch-card" id="branch-ss">
+          <span class="branch-icon">🏢</span>
+          <h3>Oficina Central San Salvador</h3>
+          <div class="branch-status" id="status-ss">Calculando...</div>
+          <p>Paseo General Escalón, Torre Financiera Vyxen, San Salvador.</p>
+          <p><b>Horario:</b> Lun a Vie de 8:00 AM a 5:00 PM</p>
+          <a href="https://maps.google.com" target="_blank" class="btn-maps">📍 Ver en Google Maps</a>
+        </div>
+        <div class="branch-card" id="branch-st">
+          <span class="branch-icon">🏛️</span>
+          <h3>Sucursal Santa Tecla</h3>
+          <div class="branch-status" id="status-st">Calculando...</div>
+          <p>Avenida Manuel Gallardo, Plaza Corporativa, Santa Tecla.</p>
+          <p><b>Horario:</b> Lun a Vie de 8:30 AM a 4:30 PM</p>
+          <a href="https://maps.google.com" target="_blank" class="btn-maps">📍 Ver en Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ==================== RESEÑAS / TESTIMONIOS ==================== -->
+  <section id="opiniones" class="section testimonials">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">TESTIMONIOS</p>
+        <h2>Reseñas de Clientes</h2>
+        <p>Lo que dicen los emprendedores y MIPYMES que han escalado con nosotros.</p>
+      </div>
+
+      <div class="reviews-slider-track reveal" id="slider-box">
+        <!-- Inyectado por JS -->
+      </div>
+
+      <div class="review-form reveal">
+        <h3>Comparte tu Experiencia</h3>
+        <form id="new-review-form" onsubmit="handleReviewSubmit(event)">
+          <div class="form-group">
+            <label>Tu Nombre</label>
+            <input type="text" id="rev-name" class="form-input" required placeholder="Ej: Roberto Vides">
+          </div>
+          <div class="form-group">
+            <label>Calificación</label>
+            <select id="rev-stars" class="form-input">
+              <option value="5">⭐⭐⭐⭐⭐ (Excelente)</option>
+              <option value="4">⭐⭐⭐⭐ (Muy Bueno)</option>
+              <option value="3">⭐⭐⭐ (Bueno)</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label>Tu Opinión</label>
+            <textarea id="rev-text" class="form-textarea" rows="3" required placeholder="¿Cómo mejoró tu contabilidad?"></textarea>
+          </div>
+          <button type="submit" class="btn primary full">Enviar Reseña</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ==================== FAQ ==================== -->
+  <section id="faq" class="section faq-section">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">RESOLVEMOS TUS DUDAS</p>
+        <h2>Preguntas Frecuentes</h2>
+        <p>Todo lo que necesitas saber antes de iniciar tu proceso de asesoría.</p>
+      </div>
+      <div class="faq-grid reveal">
+        <details class="faq-item">
+          <summary>¿Las asesorías son presenciales o virtuales?</summary>
+          <p>Nuestras sesiones de mentoría y diagnóstico se realizan de forma 100% online a través de videollamada, permitiéndonos trabajar con clientes de distintas ubicaciones con total flexibil[...]</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Qué necesito tener listo antes de nuestra primera sesión?</summary>
+          <p>Idealmente un reporte general de tus ingresos y gastos actuales o estados de cuenta recientes. No te preocupes si están desordenados, ¡para eso iniciamos con el diagnóstico!</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Ofrecen servicios de contabilidad mensual fija?</summary>
+          <p>Sí, además de las mentorías puntuales, disponemos de cupos limitados para llevar la supervisión contable y fiscal recurrente de MIPYMES.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Cómo descargo los recursos gratuitos?</summary>
+          <p>Solo haz clic en el botón de descarga de cualquier recurso y se activará una notificación instantánea con las instrucciones de acceso directo.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ==================== CALCULADORA FINANCIERA ==================== -->
+  <section id="calculadora" class="section calculator-section">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">HERRAMIENTA ÚTIL</p>
+        <h2>Calculadora de Margen y Utilidad</h2>
+        <p>Estima de forma rápida el rendimiento bruto de tus ventas mensuales.</p>
+      </div>
+      <div class="calc-box reveal">
+        <div class="form-group" style="margin-bottom: 22px;">
+          <label>Ventas Totales Mensuales ($)</label>
+          <input type="number" id="calc-ventas" class="form-input" placeholder="Ej: 5000" oninput="calcularUtilidad()">
+        </div>
+        <div class="form-group" style="margin-bottom: 22px;">
+          <label>Costos Totales (Fijos + Variables) ($)</label>
+          <input type="number" id="calc-costos" class="form-input" placeholder="Ej: 3200" oninput="calcularUtilidad()">
+        </div>
+        <div class="calc-result">
+          <span>UTILIDAD NETA ESTIMADA</span>
+          <h3 id="calc-resultado">$0.00</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ==================== SOBRE NOSOTROS & STATS ==================== -->
+  <section id="nosotros" class="section about">
+    <div class="container about-grid">
+      <div class="reveal-left">
+        <p class="eyebrow">SOBRE NOSOTROS</p>
+        <h2>Reinventando la asesoría empresarial</h2>
+        <p>Creemos firmemente que la contabilidad no debe ser un dolor de cabeza, sino el motor de decisiones de todo emprendedor. Nuestra misión es aportar claridad, orden y tranquilidad jurídica y[...]</p>
+        <div class="values">
+          <span><b>Excelencia</b>Rigurosidad en cada cálculo</span>
+          <span><b>Transparencia</b>Claridad absoluta sin rodeos</span>
+          <span><b>Innovación</b>Herramientas modernas</span>
+          <span><b>Compromiso</b>Aliados de tu crecimiento</span>
+        </div>
+      </div>
+      <div class="office reveal-right">
+        <div class="office-mark">VYXEN<br><small>LEDGER</small></div>
+      </div>
+    </div>
+    <div class="container stats reveal">
+      <div><strong class="counter" data-target="100">0</strong><span>Clientes Satisfechos</span></div>
+      <div><strong class="counter" data-target="98">0</strong><span>Tasa de Retención %</span></div>
+      <div><strong class="counter" data-target="5">0</strong><span>Años de Experiencia</span></div>
+      <div><strong class="counter" data-target="50">0</strong><span>Talleres Impartidos</span></div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ==================== CONTACTO ==================== -->
+  <section id="contacto" class="contact">
+    <div class="container contact-grid">
+      <div class="contact-copy reveal-left">
+        <p class="eyebrow">¿HABLAMOS?</p>
+        <h2>Da el primer paso hacia tu estabilidad financiera</h2>
+        <p>Agenda una sesión de diagnóstico inicial sin costo y descubre el verdadero potencial de rentabilidad de tu negocio.</p>
+        <a class="btn light" href="https://wa.me/50312341234" target="_blank">Escribir por WhatsApp ↗</a>
+      </div>
+      <form class="contact-form reveal-right" onsubmit="submitForm(event)">
+        <label>Nombre completo<input required placeholder="Tu nombre y apellido"></label>
+        <label>Correo electrónico<input type="email" required placeholder="tu@email.com"></label>
+        <label>Teléfono / WhatsApp<input placeholder="+503 0000 0000"></label>
+        <label>Servicio de interés
+          <select>
+            <option>Selecciona una opción</option>
+            <option>Mentoría</option>
+            <option>Talleres Prácticos</option>
+            <option>Formalización Legal</option>
+            <option>Control de Inventarios</option>
+            <option>Costos y Precios</option>
+          </select>
+        </label>
+        <label class="full">Cuéntanos sobre tu proyecto<textarea rows="4" placeholder="Breve descripción de tu negocio y necesidades..."></textarea></label>
+        <button class="btn primary full" type="submit">Enviar Solicitud →</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- ==================== MODAL DE CITAS ==================== -->
+<div id="appointment-modal" class="modal-overlay">
+  <div class="modal-content">
+    <button class="close-modal" onclick="toggleAppointmentModal(false)">&times;</button>
+    <h3 style="font-family: 'Playfair Display', serif; color: var(--text-main); margin-bottom: 20px;">Agendar Asesoría</h3>
+    <form onsubmit="handleAppointmentSubmit(event)">
+      <div class="form-group"><label>Nombre Completo</label><input type="text" class="form-input" required></div>
+      <div class="form-group"><label>Sucursal de Preferencia</label><select class="form-input"><option>San Salvador</option><option>Santa Tecla</option><option>Virtual (Online)</option></select></div>
+      <div class="form-group"><label>Fecha y Hora</label><input type="datetime-local" class="form-input" required></div>
+      <button type="submit" class="btn primary full" style="margin-top: 18px;">Confirmar Cita</button>
+    </form>
+  </div>
+</div>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <div class="container footer-grid">
+    <div class="logo-footer">
+      <a class="logo" href="#inicio">
+        <img src="VyxenLedger.jpeg" alt="VYXEN LEDGER Logo">
+        <div class="logo-text">
+          <span>VYXEN LEDGER</span>
+          <span>Despacho Contable</span>
+        </div>
+      </a>
+      <p>Elevando la gestión financiera y contable de las empresas hacia un siguiente nivel de rendimiento.</p>
+    </div>
+    <div>
+      <h4>Servicios</h4>
+      <a href="#servicios">Mentoría</a>
+      <a href="#servicios">Talleres</a>
+      <a href="#servicios">Formalización</a>
+      <a href="#servicios">Costos y Precios</a>
+    </div>
+    <div>
+      <h4>Recursos</h4>
+      <a href="#recursos">Calculadora</a>
+      <a href="#recursos">Guía Emprendedor</a>
+      <a href="#recursos">Flujo de Caja</a>
+    </div>
+    <div>
+      <h4>Síguenos</h4>
+      <div class="social-grid">
+        <a href="https://instagram.com" target="_blank" class="social-item"><span>Instagram</span></a>
+        <a href="https://wa.me/50312345678" target="_blank" class="social-item"><span>WhatsApp</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="container copyright">
+    <span>© 2026 VYXEN LEDGER. Todos los derechos reservados.</span>
+    <span>Precisión. Confianza. Estrategia.</span>
+  </div>
+</footer>
+
+<!-- BOTÓN FLOTANTE DE WHATSAPP -->
+<a href="https://wa.me/50312345678" target="_blank" class="whatsapp-float" aria-label="Escribir por WhatsApp">
+  <img src="whatsapp-icon.png" alt="WhatsApp" class="whatsapp-img" width="60" height="60">
+</a>
+
+<!-- TOAST -->
+<div id="toast" class="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
