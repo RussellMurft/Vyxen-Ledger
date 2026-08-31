@@ -1344,35 +1344,24 @@ footer::before {
   transform: rotate(90deg);
 }
 
-/* ---------- WHATSAPP FLOTANTE ---------- */
 .whatsapp-float {
   position: fixed;
-  bottom: 32px;
-  right: 32px;
-  background: linear-gradient(135deg, #128C7E, #25d366);
-  color: white;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 28px rgba(37,211,102,0.35);
-  z-index: 999;
-  transition: var(--transition);
-  animation: whatsappPulse 2.5s ease-in-out infinite;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
 }
 
-@keyframes whatsappPulse {
-  0%, 100% { box-shadow: 0 8px 28px rgba(37,211,102,0.35); }
-  50% { box-shadow: 0 8px 40px rgba(37,211,102,0.55), 0 0 0 8px rgba(37,211,102,0.1); }
+.whatsapp-float img {
+  width: 60px; /* Ajusta el tamaño según prefieras */
+  height: 60px;
+  border-radius: 50%; /* Por si quieres que mantenga la forma circular */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra opcional */
+  transition: transform 0.3s ease;
 }
 
-.whatsapp-float:hover {
-  transform: scale(1.12);
-  animation: none;
+.whatsapp-float img:hover {
+  transform: scale(1.1); /* Pequeño efecto al pasar el ratón */
 }
-
 /* ---------- TOAST ---------- */
 .toast {
   position: fixed;
