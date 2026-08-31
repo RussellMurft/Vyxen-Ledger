@@ -183,11 +183,13 @@
      8. BUSCADOR DE RECURSOS
      ============================== */
   window.filterResources = function () {
-    const query = document.getElementById('resource-search').value.toLowerCase();
+    const query = (document.getElementById('resource-search') && document.getElementById('resource-search').value.toLowerCase()) || '';
     const cards = document.querySelectorAll('.resource-grid .resource-card');
     cards.forEach(card => {
-      const title = card.querySelector('h3').textContent.toLowerCase();
-      const desc = card.querySelector('p').textContent.toLowerCase();
+      const titleEl = card.querySelector('h3');
+      const descEl = card.querySelector('p');
+      const title = titleEl ? titleEl.textContent.toLowerCase() : '';
+      const desc = descEl ? descEl.textContent.toLowerCase() : '';
       card.style.display = (title.includes(query) || desc.includes(query)) ? '' : 'none';
     });
   };
@@ -196,12 +198,14 @@
      9. CALCULADORA FINANCIERA
      ============================== */
   window.calcularUtilidad = function () {
-    const ventas = parseFloat(document.getElementById('calc-ventas').value) || 0;
-    const costos = parseFloat(document.getElementById('calc-costos').value) || 0;
+    const ventas = parseFloat((document.getElementById('calc-ventas') && document.getElementById('calc-ventas').value)) || 0;
+    const costos = parseFloat((document.getElementById('calc-costos') && document.getElementById('calc-costos').value)) || 0;
     const utilidad = ventas - costos;
     const resultadoEl = document.getElementById('calc-resultado');
-    resultadoEl.textContent = `$${utilidad.toFixed(2)}`;
-    resultadoEl.style.color = utilidad < 0 ? '#e74c3c' : 'var(--accent-gold)';
+    if (resultadoEl) {
+      resultadoEl.textContent = `$${utilidad.toFixed(2)}`;
+      resultadoEl.style.color = utilidad < 0 ? '#e74c3c' : 'var(--accent-gold)';
+    }
   };
 
   /* ==============================
@@ -247,14 +251,35 @@
       const card = document.createElement('div');
       card.className = 'review-card';
       card.style.animationDelay = `${i * 0.08}s`;
-      card.innerHTML = `
-        <div style="color: var(--accent-gold); margin-bottom: 10px; font-size: 14px;">${rev.stars}</div>
-        <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 18px; line-height: 1.7;">"${rev.text}"</p>
-        <div style="display:flex; align-items:center; gap:10px;">
-          <div style="width:36px;height:36px;border-radius:50%;background:var(--accent-gold-soft);border:1px solid var(--border-color);display:flex;align-items:center;justify-content:center;color:var(--accent-gold);font-weight:700;font-size:14px;">${rev.name.charAt(0)}</div>
-          <b style="font-size: 14px; color: var(--text-main);">${rev.name}</b>
-        </div>
-      `;
+
+      const stars = document.createElement('div');
+      stars.style.color = 'var(--accent-gold)';
+      stars.style.marginBottom = '10px';
+      stars.style.fontSize = '14px';
+      stars.textContent = rev.stars;
+
+      const p = document.createElement('p');
+      p.style.cssText = 'font-size:14px;color:var(--text-muted);margin-bottom:18px;line-height:1.7';
+      p.textContent = `"${rev.text}"`;
+
+      const footer = document.createElement('div');
+      footer.style.cssText = 'display:flex;align-items:center;gap:10px';
+
+      const avatar = document.createElement('div');
+      avatar.style.cssText = 'width:36px;height:36px;border-radius:50%;background:var(--accent-gold-soft);border:1px solid var(--border-color);display:flex;align-items:center;justify-content:center;color:var(--accent-gold);font-weight:700';
+      const initials = rev.name.split(' ').map(n => n[0]).slice(0,2).join('').replace(/[^A-ZÁÉÍÓÚÑ]/ig, '').toUpperCase();
+      avatar.textContent = initials;
+
+      const b = document.createElement('b');
+      b.style.cssText = 'font-size: 14px; color: var(--text-main);';
+      b.textContent = rev.name;
+
+      footer.appendChild(avatar);
+      footer.appendChild(b);
+
+      card.appendChild(stars);
+      card.appendChild(p);
+      card.appendChild(footer);
       sliderBox.appendChild(card);
     });
   }
@@ -262,14 +287,21 @@
 
   window.handleReviewSubmit = function (e) {
     e.preventDefault();
-    const name = document.getElementById('rev-name').value;
-    const starsCount = parseInt(document.getElementById('rev-stars').value);
-    const text = document.getElementById('rev-text').value;
+    const nameEl = document.getElementById('rev-name');
+    const starsEl = document.getElementById('rev-stars');
+    const textEl = document.getElementById('rev-text');
+    if (!nameEl || !starsEl || !textEl) return;
+    const name = nameEl.value.trim() || 'Anónimo';
+    const starsCount = parseInt(starsEl.value) || 5;
+    const text = textEl.value.trim() || '';
     const starsStr = '⭐'.repeat(starsCount);
     defaultReviews.unshift({ name, stars: starsStr, text });
+    // Keep reviews list reasonably sized
+    if (defaultReviews.length > 20) defaultReviews.pop();
     renderReviews();
     showToast('✨ ¡Gracias por compartir tu opinión!');
-    document.getElementById('new-review-form').reset();
+    const form = document.getElementById('new-review-form');
+    if (form) form.reset();
   };
 
   /* ==============================
@@ -311,7 +343,7 @@
   window.submitForm = function (e) {
     e.preventDefault();
     showToast('🚀 ¡Solicitud enviada con éxito! Nos pondremos en contacto contigo.');
-    e.target.reset();
+    if (e && e.target) e.target.reset();
   };
 
   /* ==============================
@@ -339,8 +371,11 @@
      ============================== */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
+      // Allow external links and telephone/wa links
+      const href = this.getAttribute('href');
+      if (!href || href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
       e.preventDefault();
-      const targetId = this.getAttribute('href');
+      const targetId = href;
       if (targetId === '#') return;
       const target = document.querySelector(targetId);
       if (target) {
@@ -362,7 +397,11 @@
         const heroCopy = heroSection.querySelector('.hero-copy');
         const heroCardEl = heroSection.querySelector('.hero-card');
         if (heroCopy) heroCopy.style.transform = `translateY(${scrolled * 0.12}px)`;
-        if (heroCardEl) heroCardEl.style.transform = `translateY(${scrolled * 0.06}px)`;
+        if (heroCardEl) {
+          // Do not override tilt transform if active — apply a translate only
+          const existing = heroCardEl.style.transform || '';
+          heroCardEl.style.transform = `${existing} translateY(${scrolled * 0.06}px)`;
+        }
       }
     });
   }
